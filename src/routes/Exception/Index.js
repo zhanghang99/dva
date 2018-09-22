@@ -9,7 +9,7 @@ import { getRoutes } from '../../utils/utils';
 class UserLayout extends React.PureComponent {
   render() {
     const { routerData, match } = this.props;
-    console.log(111);
+    console.log(111222);
     return (
       <DocumentTitle title="exception">
         <div className={styles.container}>
