@@ -1,4 +1,4 @@
-
+import { user } from '../services/example'
 export default {
 
   namespace: 'global',
@@ -16,6 +16,9 @@ export default {
     *fetch({ payload }, { call, put }) {  // eslint-disable-line
       yield put({ type: 'save' });
     },
+    *user({ payload },{ call, put }) {
+      yield call(user,payload);
+    }
   },
 
   reducers: {

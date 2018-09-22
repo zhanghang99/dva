@@ -12,7 +12,7 @@ const Routers = function ({ history, app }) {
     {
       path: '/',
       // models: () => [import('./models/example.js'),import('./models/global.js')],
-      models: ['example','global'],
+      models: ['example','global','error'],
       component: () => import('./routes/IndexPage'),
     },
     {

@@ -11,6 +11,7 @@ export default {
 
   effects: {
     *query({ payload }, { call, put }) {
+      console.log(payload);
       yield call(query, payload.code);
       // redirect on client when network broken
       yield put(routerRedux.push(`/exception/${payload.code}`));

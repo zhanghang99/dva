@@ -1,14 +1,14 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe D:\user\80002793\Application Data\npm\node_modules\yarn\bin\yarn.js start
+  D:\Nodejs\node.exe C:\Users\zhang\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
 
 PATH: 
-  D:\java\jdk1.8.0_65\bin;D:\java\jdk1.8.0_65\jre\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\gits\Git\cmd;C:\Program Files\Microsoft VS Code\bin;D:\user\80002793\Application Data\npm;D:\java\maven\bin
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\zhang\AppData\Local\VanDyke Software\Clients\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;D:\Nodejs\;MROOT%\System32\OpenSSH\;D:\WEB前端工具下载\Git\Git\cmd;C:\Program Files\Java\jdk1.8.0_181bin;D:\tomcat\apache-tomcat-9.0.10\lib;D:\tomcat\apache-tomcat-9.0.10\bin;C:\Users\zhang\AppData\Local\Microsoft\WindowsApps;C:\Users\zhang\AppData\Roaming\npm;C:\Users\zhang\AppData\Local\Programs\Fiddler;C:\Users\zhang\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_181\bin;
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  8.9.1
+  6.10.2
 
 Platform: 
   win32 x64
@@ -52,16 +52,17 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 3221225786
-  Command: C:\windows\system32\cmd.exe
+  Exit code: 1
+  Command: C:\WINDOWS\system32\cmd.exe
   Arguments: /d /s /c roadhog server
-  Directory: D:\git\dva-quickstart
+  Directory: D:\git\dva
   Output:
   
-      at ProcessTermError.MessageError (D:\user\80002793\Application Data\npm\node_modules\yarn\lib\cli.js:186:110)
-      at new ProcessTermError (D:\user\80002793\Application Data\npm\node_modules\yarn\lib\cli.js:226:113)
-      at ChildProcess.<anonymous> (D:\user\80002793\Application Data\npm\node_modules\yarn\lib\cli.js:30281:17)
-      at emitTwo (events.js:126:13)
-      at ChildProcess.emit (events.js:214:7)
-      at maybeClose (internal/child_process.js:925:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+      at ProcessTermError.Error (native)
+      at ProcessTermError.MessageError (C:\Users\zhang\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
+      at new ProcessTermError (C:\Users\zhang\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (C:\Users\zhang\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
+      at emitTwo (events.js:106:13)
+      at ChildProcess.emit (events.js:191:7)
+      at maybeClose (internal/child_process.js:886:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)

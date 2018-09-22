@@ -13,6 +13,7 @@ axios.interceptors.request.use(
 );
 axios.interceptors.response.use(
   (res) => {
+    console.log(res);
     // 取消lid对应的loading
     // cas 跳转登录
     if (res && res.data && res.data.status === 'jump') {
@@ -36,6 +37,11 @@ axios.interceptors.response.use(
     return res;
   },
   (error) => {
+    console.log(error.response);
+    let status = error.response.status;
+    if(status === 404){
+      message.error('404');//没有实现
+    }
     return Promise.reject(error.response);
   },
 );
