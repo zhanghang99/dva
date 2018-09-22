@@ -8,7 +8,7 @@ import styles from './IndexPage.css';
 }))
 export default class Login extends React.Component{
   componentDidMount(){
-    console.log(this.props,111222);
+    console.log(this.props,111222333);
   }
   render(){
     return (
