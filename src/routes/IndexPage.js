@@ -9,7 +9,7 @@ import styles from './IndexPage.css';
 }))
 export default class IndexPage extends React.Component{
   componentDidMount(){
-    console.log(this.props);
+    console.log(this.props,222);
   }
   jump = () => {
     this.props.history.push('/login');
