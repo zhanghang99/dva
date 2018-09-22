@@ -9,6 +9,7 @@ import styles from './IndexPage.css';
 export default class Login extends React.Component{
   componentDidMount(){
     console.log(this.props);
+    console.log('zhanghang');
   }
   render(){
     return (
