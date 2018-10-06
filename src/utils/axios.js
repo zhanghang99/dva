@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { message ,Spin} from 'antd';
+import { message } from 'antd';
 
 axios.defaults.timeout = 60000;
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
