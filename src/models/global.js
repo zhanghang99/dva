@@ -1,30 +1,45 @@
-import { user } from '../services/example'
-export default {
+import { queryGet, queryPost } from '../services/global';
 
+export default {
   namespace: 'global',
 
   state: {
-    a:1
-  },
-
-  subscriptions: {
-    setup({ dispatch, history }) {  // eslint-disable-line
-    },
+    queryGet: '',
+    queryPost:'',
+    isloading: false,
   },
 
   effects: {
-    *fetch({ payload }, { call, put }) {  // eslint-disable-line
-      yield put({ type: 'save' });
+    *queryGet({ payload }, { call, put }) {
+      let data = yield call(queryGet);
+      // redirect on client when network broken
+      // yield put(routerRedux.push(`/exception/${payload.code}`));
+      yield put({
+        type: 'queryGets',
+        payload: data,
+      });
     },
-    *user({ payload },{ call, put }) {
-      yield call(user,payload);
-    }
+    *queryPost({ payload }, { call, put }) {
+      let data = yield call(queryPost,payload);
+      // redirect on client when network broken
+      // yield put(routerRedux.push(`/exception/${payload.code}`));
+      yield put({
+        type: 'queryPosts',
+        payload: data,
+      });
+    },
   },
 
   reducers: {
-    save(state, action) {
-      return { ...state, ...action.payload };
+    queryGets(state, action) {
+      return {
+        global: action.payload,
+      };
+    },
+    queryPosts(state, action) {
+      return {
+        global: action.payload,
+      };
     },
   },
-
 };

@@ -1,17 +1,128 @@
-import Mock from 'mockjs';
-// 配置拦截 ajax 的请求时的行为，支持的配置项目有 timeout。
-Mock.setup({
-  timeout:'200-400',//响应时间0.2-0.4秒
-});
-// Mock响应模板
-Mock.mock('/data',{
-  'list|1-10':[{
-    'id|+1':1,// 序号 属性值自动加 1，初始值为 1
-    'businesscode':/\d{1,10}/,// 商户ID
-    'proversion|1':['标准版','企业版','试用版'],// 产品版本 随机选取 1 个元素
-    'storecode':/\d{1,10}/,// 门店编码
-    'storename':'@cname',// 门店名称
-    'status|1':['试用','使用','续用'],//状态 随机选取 1 个元素
-    'effectdate':'@date("yyyy-MM-dd")',// 有效日期
-  }]
-})
+const qs = require('qs');
+const mockjs = require('mockjs');  //导入mock.js的模块
+
+const Random = mockjs.Random;  //导入mock.js的随机数
+
+// 数据持久化   保存在global的全局变量中
+let tableListData = {};
+
+if (!global.tableListData) {
+  const data = mockjs.mock({
+    'data|100': [{
+      'id|+1': 1,
+      'name': () => {
+        return Random.cname();
+      },
+      'mobile': /1(3[0-9]|4[57]|5[0-35-9]|7[01678]|8[0-9])\d{8}/,
+      'avatar': () => {
+        return Random.image('125x125');
+      },
+      'status|1-2': 1,
+      'email': () => {
+        return Random.email('visiondk.com');
+      },
+      'isadmin|0-1': 1,
+      'created_at': () => {
+        return Random.datetime('yyyy-MM-dd HH:mm:ss');
+      },
+      'updated_at': () => {
+        return Random.datetime('yyyy-MM-dd HH:mm:ss');
+      },
+    }],
+    page: {
+      total: 100,
+      current: 1,
+    },
+  });
+  tableListData = data;
+  global.tableListData = tableListData;
+} else {
+  tableListData = global.tableListData;
+}
+
+function queryget(req, res) {
+  const page = qs.parse(req.query);
+  const pageSize = page.pageSize || 10;
+  const currentPage = page.page || 1;
+
+  let data;
+  let newPage;
+
+  let newData = tableListData.data.concat();
+
+  //数据开始模拟
+  if (page.field) {
+    const d = newData.filter((item) => {
+      return item[page.filed].indexOf(page.keyword) > -1;
+    });
+
+    data = d.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
+    newPage = {
+      current: currentPage * 1,
+      total: d.length,
+    };
+  } else {
+    data = tableListData.data.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+    tableListData.page.current = currentPage * 1;
+
+    newPage = {
+      current: tableListData.page.current,
+      total: tableListData.page.total,
+    }
+  }
+
+  setTimeout(() => {
+    res.json({      //将请求json格式返回
+      success: true,
+      data,
+      page: '123',
+    });
+  }, 200);
+}
+
+function querypost(req, res) {
+  const page = qs.parse(req.query);
+  const pageSize = page.pageSize || 10;
+  const currentPage = page.page || 1;
+
+  let data;
+  let newPage;
+
+  let newData = tableListData.data.concat();
+
+  //数据开始模拟
+  if (page.field) {
+    const d = newData.filter((item) => {
+      return item[page.filed].indexOf(page.keyword) > -1;
+    });
+
+    data = d.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
+    newPage = {
+      current: currentPage * 1,
+      total: d.length,
+    };
+  } else {
+    data = tableListData.data.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+    tableListData.page.current = currentPage * 1;
+
+    newPage = {
+      current: tableListData.page.current,
+      total: tableListData.page.total,
+    }
+  }
+
+  setTimeout(() => {
+    res.json({      //将请求json格式返回
+      success: true,
+      data,
+      page: '123',
+    });
+  }, 200);
+}
+module.exports = {
+  //post请求  /api/users/ 是拦截的地址   方法内部接受 request response对象
+  'GET /queryget': queryget,
+  'POST /querypost': querypost
+}

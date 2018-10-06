@@ -4,15 +4,10 @@ import { Switch,Router, Route } from 'dva/router'
 import dynamic from 'dva/dynamic'
 
 const Routers = function ({ history, app }) {
-  // const error = dynamic({
-  //   app,
-  //   component: () => import('./routes/error'),
-  // })
   const route = [
     {
       path: '/',
-      // models: () => [import('./models/example.js'),import('./models/global.js')],
-      models: ['example','global','error'],
+      models: ['example','global'],
       component: () => import('./routes/IndexPage'),
     },
     {
@@ -42,8 +37,7 @@ const Routers = function ({ history, app }) {
     },
     {
       path: '/exception/trigger',
-      // models: () => [import('./models/error.js')],
-      models: ['error'],
+      models: ['global'],
       component: () => import('./routes/Exception/triggerException'),
     }
   ]
