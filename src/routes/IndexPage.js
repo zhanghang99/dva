@@ -1,39 +1,35 @@
 import React from 'react';
 import { connect } from 'dva';
+import { Button } from 'antd';
 import styles from './IndexPage.css';
 
-@connect(({error,example,global})=>({
-  error,
+@connect(({example,global})=>({
   example,
   global
 }))
 export default class IndexPage extends React.Component{
   componentDidMount(){
-    console.log(this.props,111222333444);
+
+  }
+  componentWillReceiveProps(nextProps){
+    console.log(nextProps);
   }
   jump = () => {
     this.props.history.push('/login');
   }
-  triggerError = (code) => {
-    console.log(code);
-    this.setState({
-      isloading: true,
-    });
+  triggerGet = () => {
     this.props.dispatch({
-      type: 'error/query',
+      type: 'global/queryGet',
+    });
+  };
+  triggerPost = () => {
+    this.props.dispatch({
+      type: 'global/queryPost',
       payload: {
-        code,
+        code:'123',
       },
     });
   };
-  trigger = () => {
-    this.props.dispatch({
-      type:'global/user',
-      payload:{
-        name:'zhang'
-      }
-    })
-  }
   render(){
     return (
       <div className={styles.normal}>
@@ -42,12 +38,13 @@ export default class IndexPage extends React.Component{
         <ul className={styles.list}>
           <li onClick={this.jump}>To get started, edit <code>src/index.js</code> and save to reload.</li>
         </ul>
-        <button type="danger" onClick={() => this.triggerError(401)}>
-            触发401
+        <button type="danger" onClick={() => this.triggerGet()}>
+          GIT请求数据
         </button>
-        <button type="danger" onClick={() => this.trigger()}>
-            请求数据
+        <button type="danger" onClick={() => this.triggerPost()}>
+          POST请求数据
         </button>
+        <Button>Default</Button>
       </div>
     )
   }

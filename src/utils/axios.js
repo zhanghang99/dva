@@ -4,18 +4,15 @@ import { message } from 'antd';
 axios.defaults.timeout = 60000;
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 axios.interceptors.request.use(
-  config => config,
-  // if(store.state.global.userToken){
-  //   // config.Authorization = `token ${store.state.currentUser.userToken}`;
-  //   config.headers["access-token"] = store.state.currentUser.userToken;
-  // }
+  config => {
+    return config
+  },
   err => Promise.reject(err),
 );
 axios.interceptors.response.use(
   (res) => {
     console.log(res);
-    // 取消lid对应的loading
-    // cas 跳转登录
+    // 跳转登录
     if (res && res.data && res.data.status === 'jump') {
       if (res.data.result && res.data.result.redirect) {
         setTimeout(() => {
@@ -37,12 +34,8 @@ axios.interceptors.response.use(
     return res;
   },
   (error) => {
-    console.log(error.response);
     let status = error.response.status;
-    if(status === 404){
-      message.error('404');//没有实现
-    }
-    return Promise.reject(error.response);
+    message.error(status);
   },
 );
 export default axios;

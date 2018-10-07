@@ -15,7 +15,7 @@ export default class TriggerException extends PureComponent {
       isloading: true,
     });
     this.props.dispatch({
-      type: 'error/query',
+      type: 'global/query',
       payload: {
         code,
       },
