@@ -16,6 +16,11 @@ const Routers = function ({ history, app }) {
       component: () => import('./routes/login.js'),
     },
     {
+      path: '/MobileCom',
+      models: [],
+      component: () => import('./routes/MobileCom'),
+    },
+    {
       path: '/exception',
       component: () => import('./routes/Exception/Index.js'),
     },

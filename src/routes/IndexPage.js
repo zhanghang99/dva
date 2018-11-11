@@ -11,9 +11,9 @@ export default class IndexPage extends React.Component{
   componentDidMount(){
     console.log(1);
   }
-  componentWillReceiveProps(nextProps){
-    console.log(nextProps);
-  }
+  // componentWillReceiveProps(nextProps){
+  //   console.log(nextProps);
+  // }
   jump = () => {
     this.props.history.push('/login');
   }
@@ -30,6 +30,9 @@ export default class IndexPage extends React.Component{
       },
     });
   };
+  mobileJump = () => {
+    this.props.history.push('/MobileCom');
+  }
   render(){
     return (
       <div className={styles.normal}>
@@ -44,7 +47,8 @@ export default class IndexPage extends React.Component{
         <button type="danger" onClick={() => this.triggerPost()}>
           POST请求数据
         </button>
-        <Button>Default</Button>
+        <Button>PC组件</Button>
+        <Button onClick={this.mobileJump}>Mobile组件</Button>
       </div>
     )
   }
