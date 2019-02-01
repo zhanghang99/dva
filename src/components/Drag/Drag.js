@@ -1,6 +1,7 @@
 import React from 'react';
 import DragItem from './DragItem';
 import styles from './Drag.less'
+
 export default class Drag extends React.Component{
   constructor(props){
     super(props);

@@ -6,44 +6,12 @@ import dynamic from 'dva/dynamic'
 const Routers = function ({ history, app }) {
   const route = [
     {
-      path: '/',
-      models: ['example','global'],
-      component: () => import('./routes/IndexPage'),
-    },
-    {
-      path: '/login',
-      models: ['example','global'],
-      component: () => import('./routes/login.js'),
-    },
-    {
-      path: '/MobileCom',
-      models: [],
-      component: () => import('./routes/MobileCom'),
-    },
-    {
-      path: '/exception',
-      component: () => import('./routes/Exception/Index.js'),
-    },
-    {
-      path: '/exception/401',
-      component: () => import('./routes/Exception/403'),
-    },
-    {
-      path: '/exception/403',
-      component: () => import('./routes/Exception/403'),
-    },
-    {
-      path: '/exception/404',
-      component: () => import('./routes/Exception/404'),
-    },
-    {
-      path: '/exception/500',
-      component: () => import('./routes/Exception/500'),
-    },
-    {
-      path: '/exception/trigger',
-      models: ['global'],
-      component: () => import('./routes/Exception/triggerException'),
+      models: [
+        'error',
+        'example',
+        'global',
+      ],
+      component: () => import('./App'),
     }
   ]
   const routes = route.map((v)=>{
@@ -82,3 +50,39 @@ Routers.propTypes = {
 }
 
 export default Routers
+
+// {
+//   path: '/login',
+//     models: ['example', 'global'],
+//       component: () => import('./routes/login.js'),
+//     },
+// {
+//   path: '/MobileCom',
+//     models: [],
+//       component: () => import('./routes/MobileCom'),
+//     },
+// {
+//   path: '/exception',
+//     component: () => import('./routes/Exception/Index.js'),
+//     },
+// {
+//   path: '/exception/401',
+//     component: () => import('./routes/Exception/403'),
+//     },
+// {
+//   path: '/exception/403',
+//     component: () => import('./routes/Exception/403'),
+//     },
+// {
+//   path: '/exception/404',
+//     component: () => import('./routes/Exception/404'),
+//     },
+// {
+//   path: '/exception/500',
+//     component: () => import('./routes/Exception/500'),
+//     },
+// {
+//   path: '/exception/trigger',
+//     models: ['global'],
+//       component: () => import('./routes/Exception/triggerException'),
+//     }
