@@ -11,11 +11,18 @@ export default class Drag extends React.Component{
     }
   }
   componentWillMount(){
+    console.log("子componentWillMount");
     this.screenWidth = window.screen.width;
     this.screenHeight = window.screen.height;
     //每个块的左上角位置
     this.coordinateAll = [];
     this.oldCompareLine = [{distance:0}];
+  }
+  componentDidMount() {
+    console.log("子componentDidMount");
+  }
+  componentWillReceiveProps(){
+    console.log("子componentWillReceiveProps");
   }
   coordinate = (data) =>{
     this.coordinateAll.push(data);
@@ -81,6 +88,7 @@ export default class Drag extends React.Component{
     this.modelTop = top;
   }
   render(){
+    console.log("子render");
     const { data,Model } = this.state;
     return (
       <div className={styles.Drag}
