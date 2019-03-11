@@ -26,5 +26,6 @@
     "react-document-title": "^2.0.3",
     "redbox-react": "^1.4.3",
     "roadhog": "^2.4.5"
-  }
+  },
+  "proxy": "http://your-api-server:8000"
 }
