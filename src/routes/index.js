@@ -31,6 +31,9 @@ export default class Index extends React.Component{
   mobileJump = () => {
     this.props.history.push('/MobileCom');
   }
+  PCJump = () => {
+    this.props.history.push('/PCCom');
+  }
   render(){
     return (
       <div className={styles.normal}>
@@ -48,7 +51,7 @@ export default class Index extends React.Component{
         <button type="danger" onClick={() => this.triggerPost()}>
           POST请求数据
         </button>
-        <Button>PC组件</Button>
+        <Button onClick={this.PCJump}>PC组件</Button>
         <Button onClick={this.mobileJump}>Mobile组件</Button>
       </div>
     );

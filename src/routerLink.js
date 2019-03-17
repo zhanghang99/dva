@@ -8,6 +8,10 @@ const route = [
     component: () => require("./routes/MobileCom").default
   },
   {
+    path: "/PCCom",
+    component: () => require("./routes/PCCom").default
+  },
+  {
     path: "/exception",
     component: () => require("./routes/Exception/Index.js").default
   },
