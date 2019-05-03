@@ -25,6 +25,4 @@ const PRO = {
 // 开发环境或者测试环境
 const url = process.env.NODE_ENV === 'development' ? PRO : SIT;
 export default url;
-console.log('topic/V1.1-1');
-console.log('topic/V1.1-2');
-console.log('topic/V1.1-3');
+console.log('topic/V1.1-10');
