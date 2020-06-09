@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-04-09 16:11:19
+ * @LastEditTime: 2020-06-09 15:54:12
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \dva\src\services\url.js
+ */ 
 /**
  * 
  *多服务器联调开发
