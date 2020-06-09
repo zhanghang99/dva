@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-04-09 16:11:19
+ * @LastEditTime: 2019-08-22 17:18:38
+ * @LastEditors: Please set LastEditors
+ */
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Switch,Router, Route } from 'dva/router'
@@ -49,40 +56,4 @@ Routers.propTypes = {
   app: PropTypes.object,
 }
 
-export default Routers
-
-// {
-//   path: '/login',
-//     models: ['example', 'global'],
-//       component: () => import('./routes/login.js'),
-//     },
-// {
-//   path: '/MobileCom',
-//     models: [],
-//       component: () => import('./routes/MobileCom'),
-//     },
-// {
-//   path: '/exception',
-//     component: () => import('./routes/Exception/Index.js'),
-//     },
-// {
-//   path: '/exception/401',
-//     component: () => import('./routes/Exception/403'),
-//     },
-// {
-//   path: '/exception/403',
-//     component: () => import('./routes/Exception/403'),
-//     },
-// {
-//   path: '/exception/404',
-//     component: () => import('./routes/Exception/404'),
-//     },
-// {
-//   path: '/exception/500',
-//     component: () => import('./routes/Exception/500'),
-//     },
-// {
-//   path: '/exception/trigger',
-//     models: ['global'],
-//       component: () => import('./routes/Exception/triggerException'),
-//     }
+export default Routers;

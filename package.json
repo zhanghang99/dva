@@ -7,7 +7,11 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "babel-plugin-import": "^1.12.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "dva": "^2.3.2",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
@@ -25,7 +29,6 @@
     "mockjs": "^1.0.1-beta3",
     "react-document-title": "^2.0.3",
     "redbox-react": "^1.4.3",
-    "roadhog": "^2.4.5"
-  },
-  "proxy": "http://your-api-server:8000"
+    "roadhog": "^2.5.0-beta.4"
+  }
 }

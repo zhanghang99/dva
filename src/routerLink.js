@@ -1,39 +1,22 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-04-09 16:11:19
+ * @LastEditTime: 2019-08-22 17:34:38
+ * @LastEditors: Please set LastEditors
+ */
 const route = [
   {
     path: "/Index",
-    component: () => require("./routes/index.js").default
+    component: () => import("./routes/index.js")
   },
   {
     path: "/MobileCom",
-    component: () => require("./routes/MobileCom").default
+    component: () => import("./routes/MobileCom")
   },
   {
     path: "/PCCom",
-    component: () => require("./routes/PCCom").default
-  },
-  {
-    path: "/exception",
-    component: () => require("./routes/Exception/Index.js").default
-  },
-  {
-    path: "/exception/401",
-    component: () => require("./routes/Exception/403").default
-  },
-  {
-    path: "/exception/403",
-    component: () => require("./routes/Exception/403").default
-  },
-  {
-    path: "/exception/404",
-    component: () => require("./routes/Exception/404").default
-  },
-  {
-    path: "/exception/500",
-    component: () => require("./routes/Exception/500").default
-  },
-  {
-    path: "/exception/trigger",
-    component: () => require("./routes/Exception/triggerException").default
+    component: () => import("./routes/PCCom")
   }
 ];
 export default route;

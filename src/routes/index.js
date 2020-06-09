@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-04-09 16:11:19
+ * @LastEditTime: 2019-08-26 15:28:34
+ * @LastEditors: Please set LastEditors
+ */
 import React from 'react';
 import { connect } from 'dva';
 import { Button } from 'antd';
@@ -9,7 +16,7 @@ import styles from "./index.css";
 }))
 export default class Index extends React.Component{
   componentDidMount(){
-    console.log(1);
+    // console.log(1);
   }
   jump = () => {
     this.props.history.push('/login');
@@ -53,6 +60,55 @@ export default class Index extends React.Component{
         </button>
         <Button onClick={this.PCJump}>PC组件</Button>
         <Button onClick={this.mobileJump}>Mobile组件</Button>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
       </div>
     );
   }

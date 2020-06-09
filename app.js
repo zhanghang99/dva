@@ -47,3 +47,13 @@ app.get("/queryget",(req,res)=>{
     ];
     res.json(output);
 });
+app.post("/querypost",(req,res)=>{
+    var output=[
+        {lable:"APP端",value:60},
+        {lable:"微信端",value:10},
+        {lable:"手机浏览器端",value:10},
+        {lable:"PC端",value:10},
+        {lable:"其他",value:10}
+    ];
+    res.json(output);
+})
